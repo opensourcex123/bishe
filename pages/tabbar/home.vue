@@ -17,7 +17,7 @@
 				indicator-active-color="#ff6a6c">
 				<swiper-item class="swiper-item padding-lr wh-full box-sizing-b" v-for="(item, index) in swiperDatas"
 					:key="index">
-					<view class="wh-full" @click.stop="topage(item)">
+					<view class="wh-full">
 						<image class="border-radius wh-full" mode="aspectFill" :lazy-load="true" :src="item.img" />
 					</view>
 				</swiper-item>
@@ -143,21 +143,6 @@
 				src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/d5eb8ba1-5995-4742-95ac-e22a3f6dbee4.jpeg">
 			</image>
 		</view>
-		<!-- 维修社区 -->
-		<!-- <use-list-title title="维修社区" tip="查看全部" size="32" fwt="600" color="#333" iconfont="" @goto="toCommunity">
-		</use-list-title>
-		<view v-for="item in repairCommunityDatas" :key='item.id' @click="toCommunityDetail(item.id)">
-			<view style="margin-bottom: 10upx;" class="dflex-b">
-				<view class="dflex-flow-c dflex-s margin-left">
-					<text style="font-size: larger; font-weight: bolder;">{{item.title}}</text>
-					<text>{{item.looked}}人看过</text>
-				</view>
-				<image style="width: 300rpx; height: 180rpx; border-radius: 10%;" class="border-radius-xs"
-					mode="aspectFill" :lazy-load="true" :src='item.img'>
-				</image>
-			</view>
-		</view> -->
-
 		<view class="gap"></view>
 		<!-- tab页 -->
 		<view>
@@ -286,9 +271,6 @@
 			</view>
 		</view>
 
-		<!-- 05. 热门推荐 -->
-		<!-- <use-hot-goods :datas="goodsHotDatas" autoload="none" title="热门推荐"></use-hot-goods> -->
-
 		<button @click="toQuickOrder" class="fixed-btn" size="mini" type="warn">一键下单</button>
 		<!-- 置顶 -->
 		<use-totop ref="usetop" :style="{ marginBottom: navHeight + 'px' }"></use-totop>
@@ -323,27 +305,6 @@
 				goodsLimitDatas: [],
 				// 热门推荐
 				goodsHotDatas: [],
-				// 维修社区
-				repairCommunityDatas: [{
-						id: 1,
-						title: '广西北海市工信局路晓军一行 调研家庭维修',
-						looked: 1072,
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/b3075dd2-aa51-4b4a-b01a-6670f07157bf.jfif'
-					},
-					{
-						id: 2,
-						title: '广西北海市工信局路晓军一行 调研家庭维修',
-						looked: 1072,
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/b3075dd2-aa51-4b4a-b01a-6670f07157bf.jfif'
-					},
-					{
-						id: 3,
-						title: '广西北海市工信局路晓军一行 调研家庭维修',
-						looked: 1072,
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/b3075dd2-aa51-4b4a-b01a-6670f07157bf.jfif'
-					}
-				],
-				// 菜单
 
 				scrollTop: 0,
 				navHeight: 0,
@@ -367,14 +328,6 @@
 						extra: '[强力除油污]告别油垢污渍',
 						price: 166,
 						sku_id: '6361fbe35125130001f0b583'
-					},
-					{
-						_id: '1667365374418915975',
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/54a71c96-439a-48f1-8da4-dd6ec27ff3f3.jpeg',
-						title: '滚筒洗衣机清洗（不拆机）',
-						extra: '[除霉除污垢]去除洗衣桶内壁细...',
-						price: 158,
-						sku_id: '6361f9fe53a7f30001886755'
 					}
 				],
 				jiaDianWeiXiu: [{
@@ -384,14 +337,6 @@
 						extra: '空调不制冷/漏水/噪音大...',
 						price: 98,
 						sku_id: '63632cc0f1492c00018ce10d'
-					},
-					{
-						_id: '1667292436721923230',
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/f59a2653-1f05-4bb5-8f12-f46e0fcb9bf2.jpeg',
-						title: '洗衣机维修',
-						extra: '[保修90天]告别油垢污渍',
-						price: 79,
-						sku_id: ''
 					}
 				],
 				guanDaoShuTong: [{
@@ -401,28 +346,12 @@
 						extra: '不通不收费 快速响应',
 						price: 156,
 						sku_id: ''
-					},
-					{
-						_id: '1667791626022810021',
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/bc7c43c9-ad3c-47aa-afb9-de6965a6d21d.jpeg',
-						title: '地漏疏通',
-						extra: '[不通不收费]告别油垢污渍',
-						price: 156,
-						sku_id: ''
 					}
 				],
 				shuiDianWeiXiu: [{
 						_id: '1668006464029300211',
 						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/36ce2207-69e8-418e-acbe-f4f43b8c7d56.jpg',
 						title: '水管维修',
-						extra: '上门费30元，线上预约服务',
-						price: 30,
-						sku_id: ''
-					},
-					{
-						_id: '1667996738724110056',
-						img: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-9996c376-000d-4ad5-a52d-549d0e9c9ce6/07c8a0eb-bdc1-47db-bad2-9b660a6dae4c.jpg',
-						title: '普通家用灯具安装、维修',
 						extra: '上门费30元，线上预约服务',
 						price: 30,
 						sku_id: ''
@@ -492,17 +421,6 @@
 								// 数据加载完成回调函数
 								callback();
 							}
-
-							// #ifdef H5 || MP-360
-							// if (this.goodsLimitDatas.length > 0) {
-							// 	this.$api.dom('.uni-scroll-view-content').children[0].style.width = (uni
-							// 		.upx2px(260) * this.goodsLimitDatas.length) + 'px';
-							// 	new this.$iscroll('.uni-scroll-view-content', {
-							// 		scrollX: true,
-							// 		click: true
-							// 	});
-							// }
-							// #endif
 						}
 					});
 			},
@@ -569,15 +487,6 @@
 				});
 				return Promise.all([p1, p2]);
 			},
-			// 调起订阅消息
-			subscribeMessage() {
-				uni.requestSubscribeMessage({
-					tmplIds: ['cPKudU2HH2XVYPAqwPMm_k6cmRrlKb1Q6BOKotegJvk'],
-					complete: res => {
-						console.log('res........', res);
-					}
-				});
-			},
 			// 搜索回调函数
 			search() {
 				console.log('search');
@@ -607,19 +516,6 @@
 					id: item._id
 				});
 			},
-			// 限时精选
-			limit() {
-				// 跳转商品列表 - 限时精选类目
-				this.$api.togoodslist({
-					limited: 1
-				});
-			},
-			// 跳转维修社区
-			toCommunity() {
-				uni.navigateTo({
-					url: '/sub_pages_1/community/home'
-				});
-			},
 			// 跳转快速下单
 			toQuickOrder() {
 				// let _this = this;
@@ -635,13 +531,6 @@
 			toCategory(cid) {
 				getApp().globalData.cid = cid;
 				this.$api.tocategory();
-			},
-			// 跳转社区详情页
-			toCommunityDetail(id) {
-				console.log('goto');
-				uni.navigateTo({
-					url: '/sub_pages_1/community/detail?id=' + id
-				});
 			},
 			// 检测是否已登录
 			loginCheck() {

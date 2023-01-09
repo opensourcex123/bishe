@@ -24,8 +24,6 @@
 				</uni-forms-item>
 			</uni-forms>
 			
-			<div class="text-blue margin-tb text-bold" @tap="checkDoc">点击查看工程师协议</div>
-
 			<button class="cu-btn lg block bg-blue" @tap="submit">提交审核</button>
 		</view>
 	</view>
@@ -182,26 +180,6 @@ export default {
 					});
 			});
 		},
-		checkDoc() {
-			uni.showLoading()
-			uni.downloadFile({
-				url: 'https://jiadianweixiu-1302510758.cos.ap-beijing.myqcloud.com/agreement.docx',
-				success: function(res) {
-					var filePath = res.tempFilePath;
-					uni.openDocument({
-						filePath: filePath,
-						showMenu: true,
-						success: function(res) {
-							console.log('打开文档成功');
-							uni.hideLoading()
-						},
-						fail() {
-							uni.hideLoading()
-						}
-					});
-				}
-			});
-		}
 	},
 	mounted() {
 		this.getServices()

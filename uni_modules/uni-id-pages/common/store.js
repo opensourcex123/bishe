@@ -89,9 +89,10 @@ export const mutations = {
 				console.log('fromDbData', res.result.data);
 				this.setUserInfo(res.result.data[0])
 			} catch (e) {
-				this.setUserInfo({}, {
-					cover: true
-				})
+				console.log('捕捉到了错误')
+				// this.setUserInfo({}, {
+				// 	cover: true
+				// })
 				console.error(e.message, e.errCode);
 			}
 		}
