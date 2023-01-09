@@ -1,0 +1,42 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"push_clientid": {
+			"bsonType": "string",
+			"description": "推送cid"
+		},
+		"title": {
+			"bsonType": "string",
+			"description": "推送标题"
+		},
+		"content": {
+			"bsonType": "string",
+			"description": "推送内容"
+		},
+		"payload": {
+			"bsonType": "object",
+			"description": "推送载荷"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单id"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

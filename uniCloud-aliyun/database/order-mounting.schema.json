@@ -1,0 +1,44 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"type": {
+			"bsonType": "string",
+			"description": "待件-1 拉修-2"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "配件名称"
+		},
+		"buy_type": {
+			"bsonType": "string",
+			"description": "采购方式"
+		},
+		"arrival_time": {
+			"bsonType": "timestamp",
+			"description": "预计配件达到时间"
+		},
+		"earnest": {
+			"bsonType": "int",
+			"description": "定金"
+		},
+		"imgs": {
+			"bsonType": "array",
+			"description": "照片"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间"
+		}
+	}
+}

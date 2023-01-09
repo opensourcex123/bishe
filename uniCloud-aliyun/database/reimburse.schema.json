@@ -1,0 +1,41 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"engineer_id": {
+			"bsonType": "string",
+			"description": "工程师ID",
+			"foreignKey": "engineers.user_id"
+		},
+		"object": {
+			"bsonType": "string",
+			"description": "报销物品"
+		},
+		"money": {
+			"bsonType": "int",
+			"description": "报销金额（分）"
+		},
+		"imgs": {
+			"bsonType": "array",
+			"description": "报销凭证"
+		},
+		"status": {
+			"bsonType": "int",
+			"description": "当前状态 1：正在审核 2：审核通过 3：审核失败 4：已撤销"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间"
+		}
+	}
+}

@@ -1,0 +1,55 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"tab": {
+			"bsonType": "int",
+			"description": "票据类别 0=普票, 1=专票"
+		},
+		"status": {
+			"bsonType": "int",
+			"description": "审核状态, 0=审核中, 1=审核通过, 2=审核未通过"
+		},
+		"compony_name": {
+			"bsonType": "string",
+			"description": "单位名称"
+		},
+		"identity_number": {
+			"bsonType": "string",
+			"description": "纳税人识别号"
+		},
+		"company_address": {
+			"bsonType": "string",
+			"description": "单位地址"
+		},
+		"company_phone": {
+			"bsonType": "string",
+			"description": "单位电话"
+		},
+		"bank_name": {
+			"bsonType": "string",
+			"description": "开户行"
+		},
+		"bank_account": {
+			"bsonType": "string",
+			"description": "开户行账号"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单id"
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人"
+		}
+	}
+}

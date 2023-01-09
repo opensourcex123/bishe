@@ -1,0 +1,36 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "优惠券名字"
+		},
+		"price": {
+			"bsonType": "int",
+			"description": "优惠券价格，单位（元）"
+		},
+		"amount": {
+			"bsonType": "int",
+			"description": "优惠券满多少的多少，单位（元）"
+		},
+		"deadline": {
+			"bsonType": "int",
+			"description": "优惠券截止日期"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "优惠券的所属用户id",
+			"foreignKey": "uni-id-users._id"
+		}
+	}
+}

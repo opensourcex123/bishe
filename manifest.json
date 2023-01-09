@@ -1,0 +1,242 @@
+{
+    "name" : "家庭维修服务系统",
+    "appid" : "__UNI__7F65F38",
+    "description" : "",
+    "versionName" : "1.3.0",
+    "versionCode" : 130,
+    "transformPx" : false,
+    /* 5+App特有相关 */
+    "app-plus" : {
+        "usingComponents" : true,
+        "nvueCompiler" : "uni-app",
+        "compilerVersion" : 3,
+        "compatible" : {
+            "ignoreVersion" : true
+        },
+        "splashscreen" : {
+            "alwaysShowBeforeRender" : true,
+            "waiting" : true,
+            "autoclose" : true,
+            "delay" : 0
+        },
+        /* 模块配置 */
+        "modules" : {
+            "Push" : {},
+            "OAuth" : {},
+            "Maps" : {},
+            "FaceID" : {},
+            "Payment" : {},
+            "Barcode" : {},
+            "Camera" : {}
+        },
+        /* 应用发布信息 */
+        "distribute" : {
+            /* android打包配置 */
+            "android" : {
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.AUTHENTICATE_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
+                ]
+            },
+            /* ios打包配置 */
+            "ios" : {
+                "dSYMs" : false,
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:home-service.joymeta.space" ]
+                    }
+                },
+                "privacyDescription" : {
+                    "NSFaceIDUsageDescription" : "请允许使用FaceID，以便给您带来更好的体验",
+                    "NSPhotoLibraryUsageDescription" : "该应用需要读取您的相册，以便您上传维修项照片、补充个人/订单信息或认证工程师时使用",
+                    "NSPhotoLibraryAddUsageDescription" : "该应用需要读取您的相册，以便您使用应用编辑信息时添加附件",
+                    "NSCameraUsageDescription" : "该应用需要调用您的相机，以便补充订单信息或拍摄维修项照片上传后台",
+                    "NSLocationWhenInUseUsageDescription" : "该应用需要您的地理位置，以便更好的计算您与下单用户之间的地理距离，更好的协调订单",
+                    "NSLocationAlwaysUsageDescription" : "该应用需要您的地理位置，以便更好的计算您与下单用户之间的地理距离，更好的协调订单",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "该应用需要您的地理位置，以便更好的计算您与下单用户之间的地理距离，更好的协调订单",
+                    "NSLocalNetworkUsageDescription" : "请允许访问本地网络",
+                    "NSUserTrackingUsageDescription" : "请放心，开启权限不会获取您在其他站点的隐私信息，该权限仅用于标识设备并保障服务安全与提示浏览体验",
+                    "NSMicrophoneUsageDescription" : "该应用需要获取您的手机号，以便补充个人信息或收货信息"
+                },
+                "urltypes" : "",
+                "idfa" : true
+            },
+            /* SDK配置 */
+            "sdkConfigs" : {
+                "ad" : {},
+                "push" : {
+                    "unipush" : {
+                        "version" : "2",
+                        "offline" : true,
+                        "hms" : {}
+                    }
+                },
+                "oauth" : {
+                    "univerify" : {},
+                    "weixin" : {
+                        "appid" : "wx437859090893cd44",
+                        "appsecret" : "9a3f9c0298926c4a27db36504a0fc7dd",
+                        "UniversalLinks" : "https://home-service.joymeta.space/uni-universallinks/__UNI__B670E9C/"
+                    },
+                    "apple" : {}
+                },
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "a3ed41ba8f3015b08642c37f9acc3481",
+                        "appkey_android" : "ededaf1f2b5a50638069f13fd98a3201"
+                    }
+                },
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    }
+                }
+            },
+            "splashscreen" : {
+                "useOriginalMsgbox" : true
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "nativePlugins" : {
+            "DCloud-PushSound" : {
+                "__plugin_info__" : {
+                    "name" : "自定义推送铃声和渠道",
+                    "description" : "自定义推送铃声同时支持 Android、iOS 平台",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=7482",
+                    "android_package_name" : "io.home_appliance",
+                    "ios_bundle_id" : "work.futurevista.home-service",
+                    "isCloud" : true,
+                    "bought" : 1,
+                    "pid" : "7482",
+                    "parameters" : {}
+                }
+            }
+        }
+    },
+    /* 快应用特有相关 */
+    "quickapp" : {},
+    /* 小程序特有相关 */
+    "mp-weixin" : {
+        "appid" : "wxa5516cb8088852c6",
+        "setting" : {
+            "urlCheck" : true,
+            "minified" : true,
+            "es6" : true
+        },
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "optimization" : {
+            "subPackages" : true
+        },
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "需要用户输入地址以家庭维修"
+            }
+        },
+        "requiredPrivateInfos" : [ "chooseLocation", "getLocation" ],
+        "unipush" : {
+            "enable" : true
+        }
+    },
+    "mp-alipay" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "appid" : ""
+    },
+    "mp-baidu" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "appid" : ""
+    },
+    "mp-toutiao" : {
+        "usingComponents" : true,
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "appid" : "",
+        "setting" : {
+            "minified" : true
+        }
+    },
+    "uniStatistics" : {
+        "enable" : false,
+        "version" : "1"
+    },
+    "h5" : {
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "domain" : "",
+        "unipush" : {
+            "enable" : false
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "appid" : "",
+        "setting" : {
+            "minified" : true
+        }
+    },
+    "vueVersion" : "2",
+    "mp-jd" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-lark" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "quickapp-webview-huawei" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "quickapp-webview-union" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "_spaceID" : "9996c376-000d-4ad5-a52d-549d0e9c9ce6"
+}

@@ -1,0 +1,84 @@
+{
+	"passwordSecret": [{
+		"version": 1,
+		"value": "usemall.unicloud.password.secret"
+	}],
+	"tokenSecret": "usemall.unicloud.token.secret",
+	"tokenExpiresIn": 259200,
+	"tokenExpiresThreshold": 600,
+	"passwordErrorLimit": 6,
+	"passwordErrorRetryTime": 3600,
+	"autoSetInviteCode": false,
+	"forceInviteCode": false,
+	"bindTokenToDevice": false,
+	"app": {
+		"tokenExpiresIn": 2592000,
+		"oauth": {
+			"weixin": {
+				"appid": "wx437859090893cd44",
+				"appsecret": "07ff55fc705ae2c0043b9d955df31618"
+			},
+			"apple": {
+				"bundleId": "work.futurevista.home-service"
+			}
+		},
+		"alipay": {
+			"appId": "2021003167625318",
+			"mchId": "2088541458260087",
+			"privateKey": "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtPyNlYtSmqUL1h8+nYniFebqlM+zStcvJQu/CHS1LRxWvMLZXhEyXyqOKRAn2Gc1xzHLCWhfVifSKjLGnIEZtyXHMCRPLvm2tWGcrkmvsFHqEjX4eMXshPBgSo7CsVwjNIE91hSpUAncI/7GUsbA8+zaPlAGAnYwBTjwXhbifPr003IPXay4FuwlzZ4y8vgyOvOZcKWBpkmc/I+px6z18On/ZnLTP0zCTkaugWcGXB4Ch23G/qIVxNyyu1fKai4WaIi+jFyLA7Ctcsk8FiRJBWPeZhkviEyBmz2VYBHLhtJbXypdwf25PwL3k/tBekN9RR12mk9hFH5WtVD2yh7adAgMBAAECggEAZL8Ft2y8mtptTNkYgY865OvABVfnzTTY+AYL5QcQkukYjBM4xjXyUIcPiVU9sbaZiSbKSYkYuR4LbhKZMMYNDsUJfwx8TYxEvXxeKrFwPw49nR2nDKnbn50Rpq04DVBjlt3GN2IkFkyEql//Bag7A4tW1DHOmduEUjILseYaUcezhV2tLmU3QrIb6m5cd+OLcrHLG5X1TZgZYrmnt3Wb2nj+8B/WAEnW9GAk96Fg/S7UBurK6K1nyfpacXjsBIJBfx9NUg46+FNNux5V7J4ozYMgP1R/X6OJ+Ll514e9uUne5qdNLKHoMeLmDessZ2yxBLYhmQpCAqACk9iNR66XZQKBgQD073xBxU67s8oWn48bBmolA/oitIMMyB1SUEszQwKFiPK4C6knjX5Aw2Dnz1K3gYgzVyW8ei91KIlHSglHma5JBNHZ7tkMRcuDIDaVByGig1LbOO9dFMMM/iV/ikk99Y2vc4xV40W5yqBbkrnSr4PsydBF2BwJ2evteGtqugOMlwKBgQC1Ep6Of7F0/Mcdxhft571Sf6z+vmTOwqax/wjm5RdhiGB4YRf3CoNDiQVXrW/1Tcg3R/2TqXadi2MVY7O+acrFXsV1wZlxHNl7Kudlhmg0xiU9dOCW0aVfqu0Q6isGzv0Pn8v0/T3BvavjQL/cNTaGJOOUq/ndZGkZEEy8NhSY6wKBgEsXUMTpNKYfDIm7CSiD4u7ONVWGedblUvf1XditZoyB28fI62cQ3fAE9iSbTwSrVZJH2W3bF8mXT97nN8kXuHLyY1OpAindC/N7YMB3mzwzfqdu4RNsVhAZqm1be/De4z0y84cxUiMPl/H7HbUV0iA6DvwasR3kDYyUKnph5MypAoGAcXeVfF5waYrti67S1/ZcIRJ46bmNmjNIGkpi3a25lRjMuyK8zcX8s5lti5/XhLSVPm8SbDHJbrgmAwVTYYMR2dSlkEEdUlBtyEz+bBRpwIhaVcSj6F6/bs/BdtQG2mFjGyNbv83hoUKmL+YnVGrUHAOJyWRrU1zUrywTqe2JwrkCgYBTnkoTnQoBO9ZmllrOw5Cv5mFR0wfCCn11XtHL/2MgHgLExU5deGpDs9hqZ0SOfF84I4sIF+oZjCpupd29L+oDSPRafsH/iEY2xNd2elkpdo59CzPPBvtKei/dqVRdwzHCpiidwL+Bzepb4lY+98zXVNLR3jB0782C1lXcACMdTQ==",
+			"alipayPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxJy9bBkBa500IYlwrm9Fb0BlHdqrzT6TwP1RbMO0H6ccNw6U5d9l1298/uG6KOzMiwRkE6E+g1NSzM0R7WLS9hWjuaG+eL2L6YnR3aSSsxpYfnt1yXW0IfgvqR9MTE5kyLI6GM/mQzPc72A3k1Qut0LuHp+NkQ/1dkKSXEFyZmeFnzNA24tnptcAihBKdHLb+qZ4KQjPkeNXX1b4wIRu53E8sVg4xTW6izECEC0bSBoZOaqXI6yhrnyDuljOhldybPPgOQxBfDx6oe6WQPraG//SRgssu37nGpmfRC9LDfrZ457hFrsDUj9Owwjja4LzLMesL4bC167UTzkQeLVBbQIDAQAB"		
+		}
+	},
+	"mp-weixin": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"weixin": {
+				"appid": "wxa5516cb8088852c6",
+				"appsecret": "0199e78a6cd5488b3692033a862fbdcc"
+			}
+		},
+		"pay": {
+			"appId": "wxa5516cb8088852c6",
+			"mchId": "1635074136",
+			"key": "kCL8rqPt5uYZ0gH6zmz4Dwsq9zLPLqt7"
+		},
+		"notify-url": "https://9996c376-000d-4ad5-a52d-549d0e9c9ce6.bspapp.com/http/notify/wxpay"
+	},
+	"mp-alipay": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"alipay": {
+				"appid": "支付宝小程序appid",
+				"privateKey": "支付宝小程序私钥",
+				"keyType": "支付宝小程序私钥类型"
+			}
+		},
+		"pay": {
+			"appId": "2021003167625318",
+			"mchId": "2088541458260087",
+			"privateKey": "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtPyNlYtSmqUL1h8+nYniFebqlM+zStcvJQu/CHS1LRxWvMLZXhEyXyqOKRAn2Gc1xzHLCWhfVifSKjLGnIEZtyXHMCRPLvm2tWGcrkmvsFHqEjX4eMXshPBgSo7CsVwjNIE91hSpUAncI/7GUsbA8+zaPlAGAnYwBTjwXhbifPr003IPXay4FuwlzZ4y8vgyOvOZcKWBpkmc/I+px6z18On/ZnLTP0zCTkaugWcGXB4Ch23G/qIVxNyyu1fKai4WaIi+jFyLA7Ctcsk8FiRJBWPeZhkviEyBmz2VYBHLhtJbXypdwf25PwL3k/tBekN9RR12mk9hFH5WtVD2yh7adAgMBAAECggEAZL8Ft2y8mtptTNkYgY865OvABVfnzTTY+AYL5QcQkukYjBM4xjXyUIcPiVU9sbaZiSbKSYkYuR4LbhKZMMYNDsUJfwx8TYxEvXxeKrFwPw49nR2nDKnbn50Rpq04DVBjlt3GN2IkFkyEql//Bag7A4tW1DHOmduEUjILseYaUcezhV2tLmU3QrIb6m5cd+OLcrHLG5X1TZgZYrmnt3Wb2nj+8B/WAEnW9GAk96Fg/S7UBurK6K1nyfpacXjsBIJBfx9NUg46+FNNux5V7J4ozYMgP1R/X6OJ+Ll514e9uUne5qdNLKHoMeLmDessZ2yxBLYhmQpCAqACk9iNR66XZQKBgQD073xBxU67s8oWn48bBmolA/oitIMMyB1SUEszQwKFiPK4C6knjX5Aw2Dnz1K3gYgzVyW8ei91KIlHSglHma5JBNHZ7tkMRcuDIDaVByGig1LbOO9dFMMM/iV/ikk99Y2vc4xV40W5yqBbkrnSr4PsydBF2BwJ2evteGtqugOMlwKBgQC1Ep6Of7F0/Mcdxhft571Sf6z+vmTOwqax/wjm5RdhiGB4YRf3CoNDiQVXrW/1Tcg3R/2TqXadi2MVY7O+acrFXsV1wZlxHNl7Kudlhmg0xiU9dOCW0aVfqu0Q6isGzv0Pn8v0/T3BvavjQL/cNTaGJOOUq/ndZGkZEEy8NhSY6wKBgEsXUMTpNKYfDIm7CSiD4u7ONVWGedblUvf1XditZoyB28fI62cQ3fAE9iSbTwSrVZJH2W3bF8mXT97nN8kXuHLyY1OpAindC/N7YMB3mzwzfqdu4RNsVhAZqm1be/De4z0y84cxUiMPl/H7HbUV0iA6DvwasR3kDYyUKnph5MypAoGAcXeVfF5waYrti67S1/ZcIRJ46bmNmjNIGkpi3a25lRjMuyK8zcX8s5lti5/XhLSVPm8SbDHJbrgmAwVTYYMR2dSlkEEdUlBtyEz+bBRpwIhaVcSj6F6/bs/BdtQG2mFjGyNbv83hoUKmL+YnVGrUHAOJyWRrU1zUrywTqe2JwrkCgYBTnkoTnQoBO9ZmllrOw5Cv5mFR0wfCCn11XtHL/2MgHgLExU5deGpDs9hqZ0SOfF84I4sIF+oZjCpupd29L+oDSPRafsH/iEY2xNd2elkpdo59CzPPBvtKei/dqVRdwzHCpiidwL+Bzepb4lY+98zXVNLR3jB0782C1lXcACMdTQ==",
+			"alipayPublicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxJy9bBkBa500IYlwrm9Fb0BlHdqrzT6TwP1RbMO0H6ccNw6U5d9l1298/uG6KOzMiwRkE6E+g1NSzM0R7WLS9hWjuaG+eL2L6YnR3aSSsxpYfnt1yXW0IfgvqR9MTE5kyLI6GM/mQzPc72A3k1Qut0LuHp+NkQ/1dkKSXEFyZmeFnzNA24tnptcAihBKdHLb+qZ4KQjPkeNXX1b4wIRu53E8sVg4xTW6izECEC0bSBoZOaqXI6yhrnyDuljOhldybPPgOQxBfDx6oe6WQPraG//SRgssu37nGpmfRC9LDfrZ457hFrsDUj9Owwjja4LzLMesL4bC167UTzkQeLVBbQIDAQAB"
+		},
+		"notify-url": "https://9996c376-000d-4ad5-a52d-549d0e9c9ce6.bspapp.com/http/notify/alipay"
+	},
+	"service": {
+		"sms": {
+			"name": "应用名称，对应短信模版的name",
+			"codeExpiresIn": 600,
+			"smsKey": "短信密钥key",
+			"smsSecret": "短信密钥secret"
+		},
+		"smscode": {
+			"templateId": "验证码短信模板Id"
+		},
+		"univerify": {
+			"appid": "__UNI__B670E9C",
+			"apiKey": "ba836d1312fef4a3d2b5b8b3a0b38eca",
+			"apiSecret": "4f61b10cdfa259ebb57ab10763bf307b"
+		}
+	},
+	"kd100": {
+		"customer": "快递100 customer",
+		"key": "快递100 授权KEY"
+	}
+}

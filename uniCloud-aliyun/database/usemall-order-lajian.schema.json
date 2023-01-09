@@ -1,0 +1,26 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"count": true,
+		"create": true,
+		"delete": true,
+		"read": true,
+		"update": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"status": {
+			"bsonType": ""
+		}
+	}
+}

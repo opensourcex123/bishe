@@ -1,0 +1,92 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"count": true,
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "userId"
+		},
+		"level": {
+			"bsonType": "int",
+			"description": "工程师等级"
+		},
+		"score": {
+			"bsonType": "int",
+			"description": "服务分"
+		},
+		"point": {
+			"bsonType": "array",
+			"description": "经纬度点"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "真实姓名"
+		},
+		"salary": {
+			"bsonType": "int",
+			"description": "收入"
+		},
+		"skill": {
+			"bsonType": "array",
+			"description": "技能"
+		},
+		"phone": {
+			"bsonType": "string",
+			"description": "手机号"
+		},
+		"type": {
+			"bsonType": "int",
+			"description": "工程师类别 1：全职 2：兼职"
+		},
+		"status": {
+			"bsonType": "int",
+			"description": "当前状态 0-空闲中 1-已上门"
+		},
+		"audit_status": {
+			"bsonType": "int",
+			"description": "审核状态 0-待审核 1-已通过 2-未通过"
+		},
+		"id_card_front": {
+			"bsonType": "string",
+			"description": "身份证正面"
+		},
+		"id_card_back": {
+			"bsonType": "string",
+			"description": "身份证反面"
+		},
+		"bank_card_type": {
+			"bsonType": "string",
+			"description": "结算卡银行"
+		},
+		"bank_card_number": {
+			"bsonType": "string",
+			"description": "结算卡号"
+		},
+		"avatar": {
+			"bsonType": "string",
+			"description": "头像"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间"
+		},
+		"limit": {
+			"bsonType": "int",
+			"description": "工程师限制接单数量"
+		},
+		"coupon_list": {
+			"bsonType": "array",
+			"description": "工程师拥有的优惠卷"
+		}
+	}
+}

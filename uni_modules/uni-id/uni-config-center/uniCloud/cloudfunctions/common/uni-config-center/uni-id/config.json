@@ -1,0 +1,81 @@
+{
+	"passwordSecret": [{
+		"version": 1,
+		"value": "usemall.unicloud.password.secret"
+	}],
+	"tokenSecret": "usemall.unicloud.token.secret",
+	"tokenExpiresIn": 259200,
+	"tokenExpiresThreshold": 600,
+	"passwordErrorLimit": 6,
+	"passwordErrorRetryTime": 3600,
+	"autoSetInviteCode": false,
+	"forceInviteCode": false,
+	"bindTokenToDevice": false,
+	"app-plus": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"weixin": {
+				"appid": "wxe996469157b66bb8",
+				"appsecret": "82a5bfe3b89172686cae4929b73dd866"
+			}
+		},
+		"wxpay": {
+		    "appId": "wxe996469157b66bb8",
+		    "mchId": "1606951218",
+		    "key": "kCL8rqPt5uYZ0gH6zmz4Dwsq9zLPLqt7"
+		},
+		"notify-wxpay-url": "https://8d470f4a-a816-4da4-a295-14d1c305a5e9.bspapp.com/http/notify/wxpay-app"
+	},
+	"mp-weixin": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"weixin": {
+				"appid": "wxe996469157b66bb8",
+				"appsecret": "82a5bfe3b89172686cae4929b73dd866"
+			}
+		},
+		"pay": {
+			"appId": "wxe996469157b66bb8",
+			"mchId": "1606951218",
+			"key": "kCL8rqPt5uYZ0gH6zmz4Dwsq9zLPLqt7"
+		},
+		"notify-url": "https://8d470f4a-a816-4da4-a295-14d1c305a5e9.bspapp.com/http/notify/wxpay"
+	},
+	"mp-alipay": {
+		"tokenExpiresIn": 259200,
+		"oauth": {
+			"alipay": {
+				"appid": "支付宝小程序appid",
+				"privateKey": "支付宝小程序私钥",
+				"keyType": "支付宝小程序私钥类型"
+			}
+		},
+		"pay": {
+			"appId": "支付宝小程序appid",
+			"mchId": "支付宝商户号",
+			"privateKey": "应用私钥字符串",
+			"alipayPublicKey": "支付宝公钥"
+		},
+		"notify-url": "云函数URL化http地址 + /alipay"
+	},
+	"service": {
+		"sms": {
+			"name": "用云电商 uniCloud 版前端",
+			"codeExpiresIn": 3000,
+			"smsKey": "6b70bf7ab6ce20ed4837a1845d744f99",
+			"smsSecret": "8f10d3aa7d64ad651cbe2624eb087891"
+		},
+		"smscode": {
+			"templateId": "0668"
+		},
+		"univerify": {
+			"appid": "__UNI__DA50AA5",
+			"apiKey": "ba836d1312fef4a3d2b5b8b3a0b38eca",
+			"apiSecret": "4f61b10cdfa259ebb57ab10763bf307b"
+		}
+	},
+	"kd100": {
+		"customer": "快递100 customer",
+		"key": "快递100 授权KEY"
+	}
+}

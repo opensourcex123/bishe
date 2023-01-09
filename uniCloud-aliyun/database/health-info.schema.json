@@ -1,0 +1,40 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"count": true,
+		"create": true,
+		"delete": true,
+		"read": true,
+		"update": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"title": "创建人ID",
+			"description": "创建人ID",
+			"trim": "both"
+		},
+		"yimiao": {
+			"bsonType": "int",
+			"title": "疫苗接种情况",
+			"description": "疫苗接种情况",
+			"minimum": 0,
+			"maximum": 6
+		},
+		"image": {
+			"bsonType": "string",
+			"title": "健康宝截图",
+			"description": "健康宝截图URL",
+			"trim": "both"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		}
+	}
+}

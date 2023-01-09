@@ -1,0 +1,41 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"count": true,
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"order_id": {
+			"bsonType": "string",
+			"description": "订单ID"
+		},
+		"main": {
+			"bsonType": "string",
+			"description": "跟单内容"
+		},
+		"reason": {
+			"bsonType": "string",
+			"description": "跟单缘由"
+		},
+		"extra": {
+			"bsonType": "string",
+			"description": "跟单备注"
+		},
+		"status": {
+			"bsonType": "string",
+			"description": "跟单状态"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间"
+		}
+	}
+}

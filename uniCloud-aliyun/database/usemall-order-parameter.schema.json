@@ -1,0 +1,91 @@
+{
+	"bsonType": "object",
+	"description": "订单参数",
+	"permission": {
+		"count": true,
+		"create": true,
+		"delete": true,
+		"read": true,
+		"update": true
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID，系统自动生成"
+		},
+		"create_time": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"create_uid": {
+			"bsonType": "string",
+			"description": "创建人ID",
+			"forceDefaultValue": {
+				"$env": "uid"
+			},
+			"trim": "both"
+		},
+		"create_uname": {
+			"bsonType": "string",
+			"description": "创建人",
+			"trim": "both"
+		},
+		"delete_time": {
+			"bsonType": "timestamp",
+			"description": "删除时间"
+		},
+		"delete_uid": {
+			"bsonType": "string",
+			"description": "删除人ID",
+			"trim": "both"
+		},
+		"delete_uname": {
+			"bsonType": "string",
+			"description": "删除人",
+			"trim": "both"
+		},
+		"is_delete": {
+			"bsonType": "int",
+			"defaultValue": 0,
+			"description": "是否删除 0否 1已删除"
+		},
+		"last_modify_time": {
+			"bsonType": "timestamp",
+			"description": "编辑时间"
+		},
+		"last_modify_uid": {
+			"bsonType": "string",
+			"description": "编辑人ID",
+			"trim": "both"
+		},
+		"last_modify_uname": {
+			"bsonType": "string",
+			"description": "编辑人",
+			"trim": "both"
+		},
+		"type": {
+			"bsonType": "int",
+			"description": "0=全职工程师分成参数, 1=兼职工程师分成参数, 2=主副工程师参数",
+			"trim": "both"
+		},
+		"platform_ratio": {
+			"bsonType": "int",
+			"description": "平台分成比例"
+		},
+		"engineer_ratio": {
+			"bsonType": "int",
+			"description": "工程师分成比例"
+		},
+		"main_engineer_ratio": {
+			"bsonType": "int",
+			"description": "主工程师分成比例"
+		},
+		"second_engineer_ratio": {
+			"bsonType": "int",
+			"description": "副工程师分成比例"
+		}
+	},
+	"required": ["version", "is_delete", "create_uid"]
+}
