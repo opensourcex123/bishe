@@ -45,30 +45,6 @@
 					<text class="text-grey">投诉申诉</text>
 				</navigator>
 			</view> -->
-			<view class="cu-item arrow">
-				<button class="cu-btn content" open-type="feedback">
-					<text class="cuIcon-dianhua text-cyan"></text>
-					<text class="text-grey">客服中心</text>
-				</button>
-			</view>
-			<view class="cu-item arrow">
-				<navigator class="content" url="/sub_pages_1/enginner/my/feedback/feedback" hover-class="none">
-					<text class="cuIcon-writefill text-orange"></text>
-					<text class="text-grey">意见反馈</text>
-				</navigator>
-			</view>
-			<view class="cu-item arrow">
-				<navigator class="content" url="/sub_pages_1/enginner/my/health/health" hover-class="none">
-					<text class="cuIcon-punch text-grey"></text>
-					<text class="text-grey">防疫信息</text>
-				</navigator>
-			</view>
-			<view class="cu-item arrow">
-				<button class="cu-btn content" @tap="checkDoc">
-					<text class="cuIcon-form text-cyan"></text>
-					<text class="text-grey">工程师协议</text>
-				</button>
-			</view>
 		</view>
 		<view class="cu-tabbar-height"></view>
 	</scroll-view>
@@ -93,26 +69,6 @@ export default {
 				url: '/sub_pages_1/enginner/my/info/info'
 			});
 		},
-		checkDoc() {
-			uni.showLoading()
-			uni.downloadFile({
-				url: 'https://jiadianweixiu-1302510758.cos.ap-beijing.myqcloud.com/agreement.docx',
-				success: function(res) {
-					var filePath = res.tempFilePath;
-					uni.openDocument({
-						filePath: filePath,
-						showMenu: true,
-						success: function(res) {
-							console.log('打开文档成功');
-							uni.hideLoading()
-						},
-						fail() {
-							uni.hideLoading()
-						}
-					});
-				}
-			});
-		}
 	},
 	mounted() {
 		this.getInfo();

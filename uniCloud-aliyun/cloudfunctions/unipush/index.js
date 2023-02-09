@@ -1,5 +1,5 @@
 'use strict';
-const uniPush = uniCloud.getPushManager({appId:"__UNI__B670E9C"}) //注意这里需要传入你的应用appId
+const uniPush = uniCloud.getPushManager({appId:"__UNI__7F65F38"}) //注意这里需要传入你的应用appId
 
 exports.main = async (event, context) => {
 	return await uniPush.sendMessage({

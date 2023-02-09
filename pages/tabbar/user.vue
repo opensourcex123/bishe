@@ -81,18 +81,6 @@
 						<view class="iconfont-1">&#xe904;</view>
 						<text>待评价</text>
 					</view>
-					<view class="item dflex dflex-flow-c" @click="toOrder('/sub_pages_1/user/order/order', '返修')">
-						<view class="iconfont-1">&#xe61b;</view>
-						<text>返修</text>
-					</view>
-					<!-- <view class="item dflex dflex-flow-c" @click="toOrder('/pages/user/order/order', '售后中')"> -->
-					<!-- <view class="iconfont">&#xe715;<view class="badge badge-small"
-								v-if="stats && stats.order_state && stats.order_state['售后中'] > 0">
-								{{stats.order_state['售后中']}}
-							</view>
-						</view>
-						<text>售后/退款</text>
-					</view> -->
 				</view>
 			</view>
 

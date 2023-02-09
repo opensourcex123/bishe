@@ -4,7 +4,7 @@ const {
 } = require('uni-cloud-router');
 const dbcmd = uniCloud.database().command;
 const uniPush = uniCloud.getPushManager({
-	appId: "__UNI__B670E9C"
+	appId: "__UNI__7F65F38"
 }) //注意这里需要传入你的应用appId
 
 module.exports = class UniPushController extends Controller {
