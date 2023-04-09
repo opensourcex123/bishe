@@ -136,6 +136,7 @@ export default {
 				.then(res => {
 					console.log(res);
 					this.info = res.datas.data.info || '';
+					this.info.imgs = [...this.info.imgs_engineer_before, ...this.info.imgs_engineer_after];
 					this.income = res.datas.data.income || '';
 					this.card = res.datas.data.card;
 				});

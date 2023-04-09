@@ -30,7 +30,7 @@
 								<text class="cuIcon-titles text-green text-lg"></text>
 								<text class="text-black text-bold text-lg">工单号：{{ item.order_id }}</text>
 							</view>
-							<view class="cu-tag bg-green light round" v-if="item.state !== '已取消'">成功</view>
+							<view class="cu-tag bg-green light round" v-if="!['已取消','待取消'].includes(item.state)">成功</view>
 							<view class="cu-tag bg-red light round" v-else>失败</view>
 						</view>
 						<view class="margin-top-sm">
@@ -139,7 +139,7 @@ export default {
 					states = ['已付款', '待付款', '待评价', '已完成'];
 					break;
 				case 1:
-					states = ['已取消'];
+					states = ['已取消', '待取消'];
 					break;
 			}
 			this.$func.usemall

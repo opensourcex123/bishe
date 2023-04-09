@@ -161,7 +161,7 @@ module.exports = class EngineersController extends Controller {
 
 		const failNum = await this.db.collection("usemall-order").where({
 			engineer_id: uid,
-			state: "已取消"
+			state: dbcmd.in(["已取消", "待取消"])
 		}).count()
 
 		return {

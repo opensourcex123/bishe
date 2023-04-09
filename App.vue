@@ -421,24 +421,30 @@
 			// this.loadToken();
 			if (user) {
 				console.log('user_id#################', user);
+				const deviceRes = await $db['uni-id-device'].where({
+					user_id: user._id
+				}).tolist()
 				uni.getPushClientId({
 					success: res => {
 						let pushClientId = res.cid;
-						const db = uniCloud.database();
-						console.log('客户端标识：', pushClientId);
-						db.collection('uni-id-device')
-							.where({
-								user_id: user._id
-							})
-							.update({
+						if (deviceRes.datas.length === 0) {
+							$db['uni-id-device'].add({
+								user_id: user._id,
 								push_clientid: pushClientId
 							})
-							.then(res1 => {
-								console.log(res1);
-							});
+						} else {
+							const db = uniCloud.database();
+							console.log('客户端标识：', pushClientId);
+							$db['uni-id-device'].where({
+								user_id: user._id,
+							}).update({
+								push_clientid: pushClientId
+							})
+						}
 					},
 					fail(err) {
 						console.log(err);
+						$api.msg('获取id出错',err)
 					}
 				});
 			}
