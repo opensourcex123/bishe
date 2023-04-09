@@ -33,16 +33,16 @@
 		"tokenExpiresIn": 259200,
 		"oauth": {
 			"weixin": {
-				"appid": "wxa5516cb8088852c6",
-				"appsecret": "0199e78a6cd5488b3692033a862fbdcc"
+				"appid": "wx7c52dc288d221bae",
+				"appsecret": "5f6823a8a43a6b38908283470fc34cc5"
 			}
 		},
 		"pay": {
-			"appId": "wxa5516cb8088852c6",
-			"mchId": "1635074136",
-			"key": "kCL8rqPt5uYZ0gH6zmz4Dwsq9zLPLqt7"
+			"appId": "wx7c52dc288d221bae",
+			"mchId": "",
+			"key": ""
 		},
-		"notify-url": "https://9996c376-000d-4ad5-a52d-549d0e9c9ce6.bspapp.com/http/notify/wxpay"
+		"notify-url": "https://fc-mp-15609526-df2c-463b-85f5-731a17fe758b.next.bspapp.com/http/notify/wxpay"
 	},
 	"mp-alipay": {
 		"tokenExpiresIn": 259200,

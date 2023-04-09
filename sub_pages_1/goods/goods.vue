@@ -601,24 +601,6 @@
             tohome() {
                 this.$api.tohome();
             },
-            // 收藏
-            tofavorite() {
-                if (!this.loginCheck()) return;
-
-                this.favorite = !this.favorite;
-                let _data = {
-                    goods_id: this.id,
-                    state: !this.favorite ? '已取消' : '已收藏'
-                };
-                this.$func.usemall.call('member/collect', _data).then(res => {
-                    if (res.datas) {
-                        !this.favorite ? this.$api.msg('取消成功') : this.$api.msg('收藏成功');
-                        return;
-                    }
-
-                    this.$api.msg(res.msg);
-                });
-            },
             checkSource() {
                 uni.navigateTo({
                     url: "/sub_pages_1/goods/trace-source/trace-source"

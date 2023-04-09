@@ -304,26 +304,6 @@
 						this.warranty_id = res.datas._id;
 					});
 			},
-			// 计算工程师一天的接单数量
-			getEngineerOrderCount(engineer_id) {
-				let start = new Date(this.start_time).setHours(0, 0, 0, 0);
-				let end = new Date(this.end_time).setHours(23, 59, 59, 999);
-				let count = 0;
-				return new Promise((resolve, reject) => {
-					db.collection('usemall-order')
-						.where({
-							engineer_id: engineer_id,
-							state: db.command.nin(['待接单', '已取消', '待改派', '待取消']),
-							start_time: db.command.gt(start),
-							end_time: db.command.lt(end)
-						})
-						.count()
-						.then(res => {
-							count = res.result.total;
-							resolve(count);
-						});
-				});
-			},
 			// 获取工程师
 			async loadEngineer() {
 				let _this = this;
@@ -331,7 +311,7 @@
 				let timeFilter = [];
 				this.engineerList = [];
 				await this.getCategory();
-				console.log(this.skills);
+				console.log('123', _this.addrData.longitude, _this.addrData.latitude);
 				let engineers = await db
 					.collection('engineers')
 					.where({
@@ -344,16 +324,8 @@
 						skill: db.command.in(this.skills)
 					})
 					.get();
-				engineerList = engineers.result.data;
-				// 接单数量过滤
-				for (var i = 0; i < engineerList.length; i++) {
-					const engineer = engineerList[i];
-					let count = await _this.getEngineerOrderCount(engineer.user_id);
-					console.log('count', count);
-					if (count < engineer.limit) {
-						this.engineerList.push(engineer);
-					}
-				}
+				console.log('123', engineers.result.data);
+				this.engineerList = [...engineers.result.data];
 			},
 
 			// 点击工程师选择

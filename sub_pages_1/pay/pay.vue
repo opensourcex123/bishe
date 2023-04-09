@@ -177,7 +177,7 @@ export default {
 					if (_this.coupons.length > 0) {
 						_this.showCoupon = true;
 					} else {
-						_this.confirm();
+						_this.fakeConfirm(_this.order_id);
 					}
 					console.log('asfsa', this.coupons);
 				});
@@ -421,6 +421,115 @@ export default {
 					});
 				}
 			});
+		},
+		// 绕过uni-pay的确认支付
+		async fakeConfirm(order_id) {
+			let _this = this;
+			const db = uniCloud.database();
+			
+			if (_this.pay_id !== '') {
+				_this.$db['usemall-order'].where({ order_id: order_id }).update({ pay_id: _this.pay_id });
+			}
+			
+			const resOrder = await _this.$db['usemall-order']
+				.where({
+					order_id: order_id
+				})
+				.tofirst();
+			const order = resOrder.datas;
+			
+			// 根据orderid获取工程师type
+			const resType = await db
+				.collection('engineers')
+				.where({
+					user_id: order.engineer_id
+				})
+				.get();
+			
+			// 根据type获取分成数据
+			const ratioRes = await db
+				.collection('usemall-order-parameter')
+				.where({
+					type: resType.result.data[0].type - 1
+				})
+				.get();
+			
+			console.log('ratioType====>', ratioRes);
+			const engineerRatio = await db
+				.collection('usemall-order-parameter')
+				.where({
+					type: 2
+				})
+				.get();
+			console.log('engineerRatio====>', engineerRatio);
+			// 根据分成金额获取平台费用和工程师费用
+			let second_engineer_income = 0;
+			let introduce_engineer_income = 0;
+			const plat_income = order.order_actural_paid * (ratioRes.result.data[0].platform_ratio / 100);
+			let engineer_income = order.order_actural_paid * (ratioRes.result.data[0].engineer_ratio / 100);
+			
+			// 如果有介绍工程师
+			if (order.introduce_engineer_id && order.introduce_engineer_id !== '') {
+				introduce_engineer_income = engineer_income * 0.2;
+				engineer_income = engineer_income - introduce_engineer_income;
+			
+				// 如果有副工程师
+				if (order.second_engineer_id && order.second_engineer_id !== '') {
+					second_engineer_income = engineer_income * 0.5;
+					engineer_income = engineer_income - second_engineer_income;
+				}
+			} else {
+				// 没有介绍工程师但有副工程师
+				if (order.second_engineer_id && order.second_engineer_id !== '') {
+					second_engineer_income = engineer_income * (engineerRatio.result.data[0].second_engineer_ratio / 100);
+					engineer_income = engineer_income - second_engineer_income;
+				}
+			}
+			
+			// 新增收入表数据
+			let income = {
+				order_id: order_id,
+				actual_money: parseInt(Math.round(order.order_actural_paid)),
+				plat_income: parseInt(Math.round(plat_income)),
+				engineer_income: parseInt(Math.round(engineer_income)),
+				second_engineer_income: parseInt(Math.round(second_engineer_income)),
+				introduce_engineer_income: parseInt(Math.round(introduce_engineer_income)),
+				unusual_income: 0,
+				engineer_id: order.engineer_id,
+				second_engineer_id: order.second_engineer_id,
+				introduce_engineer_id: order.introduce_engineer_id
+			};
+			
+			console.log('==========>', income);
+			
+			await db.collection('income').add(income);
+			
+			// 如果支付成功，修改一下状态
+			await _this.$db['usemall-order'].where({order_id: order_id}).update({
+				state: '待评价',
+				order_pay_state: '已付款'
+			});
+			let order_log = {
+				order_id: order_id,
+				log_type: '订单支付',
+				current_state: '待评价',
+				prev_state: '待付款',
+				is_delete: 0,
+				create_uid: order.create_uid,
+			};
+			await db.collection('usemall-order-log').add(order_log);
+			
+			if (_this.pay_id !== '') {
+				_this.$api.msg('支付成功');
+				uni.redirectTo({
+					url: `/sub_pages_1/enginner/home/home`
+				});
+			} else {
+				uni.redirectTo({
+					url: `/sub_pages_1/pay/success?order_id=${order_id}`
+				});
+			}
+			return;
 		},
 		// 检测订单支付状态
 		check() {

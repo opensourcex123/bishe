@@ -13,7 +13,7 @@
 
 	export default {
 		globalData: {
-			cid: '633e3349f74ea000011e66ef',
+			cid: '633e339ff808ea00018e8450',
 			cosUrl: 'https://jiadianweixiu-1302510758.cos.ap-beijing.myqcloud.com'
 		},
 		data() {
@@ -452,28 +452,28 @@
 				_this.sendMsgToEngineer(engineer_id, '新订单', '您有新的订单，请注意查收',
 					`/sub_pages_1/enginner/home/item-details/item-details?id=${order_id}`);
 
-				uni.request({
-					url: 'https://home-service.joyteck.cn/reassign_engineer',
-					// url: 'http://127.0.0.1:8888/reassign_engineer',
-					method: 'POST',
-					data: {
-						order_id: order_id,
-						engineer_id: engineer_id,
-						cid: goods_datas[0].goods.cid,
-						name: goods_datas[0].goods.name,
-						longitude: addr_data.longitude,
-						latitude: addr_data.latitude
-					},
-					header: {
-						'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
-					},
-					success(res) {
-						console.log('asdfgads神功远程');
-					},
-					fail(err) {
-						console.log('GGGG', err);
-					}
-				});
+				// uni.request({
+				// 	url: 'https://home-service.joyteck.cn/reassign_engineer',
+				// 	// url: 'http://127.0.0.1:8888/reassign_engineer',
+				// 	method: 'POST',
+				// 	data: {
+				// 		order_id: order_id,
+				// 		engineer_id: engineer_id,
+				// 		cid: goods_datas[0].goods.cid,
+				// 		name: goods_datas[0].goods.name,
+				// 		longitude: addr_data.longitude,
+				// 		latitude: addr_data.latitude
+				// 	},
+				// 	header: {
+				// 		'Content-Type': 'application/x-www-form-urlencoded' //自定义请求头信息
+				// 	},
+				// 	success(res) {
+				// 		console.log('asdfgads神功远程');
+				// 	},
+				// 	fail(err) {
+				// 		console.log('GGGG', err);
+				// 	}
+				// });
 			});
 		},
 		onShow: function(options) {
