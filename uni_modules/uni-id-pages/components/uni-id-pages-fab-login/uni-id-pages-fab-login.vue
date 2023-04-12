@@ -458,10 +458,10 @@
 						if (['weixin', 'weixinMobile'].includes(type) && result.type == "register") {
 							mutations.loginSuccess({
 								...result,
-								showToast: false,
-								autoBack: false
-							})
-							return this.$refs.userProfile.open(result.uid)
+								showToast: true,
+								autoBack: true
+							})	
+							return;
 						}
 						// #endif
 						// #ifdef H5

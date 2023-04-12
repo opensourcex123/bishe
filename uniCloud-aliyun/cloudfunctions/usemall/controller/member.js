@@ -247,7 +247,7 @@ module.exports = class MemberController extends Controller {
 			}
 
 			response.code = 0;
-			response.member = await this.memberLogin(res, member, 0);
+			response.member = await this.memberLogin(res, member, 1);
 			response.user = res;
 
 		} catch (e) {

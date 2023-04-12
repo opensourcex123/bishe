@@ -21,9 +21,17 @@
 				<view class="text-xxl text-bold text-black">{{ info.failNum || 0 }}</view>
 				<view class="margin-top-sm">本月失败单</view>
 			</view>
+			<view class="flex flex-sub flex-direction solid-right">
+				<view class="text-xl text-bold text-black">{{ salary.lastWeek }}</view>
+				<view class="margin-top-sm">上周工资</view>
+			</view>
+			<view class="flex flex-sub flex-direction solid-right">
+				<view class="text-xl text-bold text-black">{{ salary.week }}</view>
+				<view class="margin-top-sm">本周工资</view>
+			</view>
 			<view class="flex flex-sub flex-direction">
-				<view class="text-xxl text-bold text-black">{{ info.info.salary || 0 }}</view>
-				<view class="margin-top-sm">我的账户</view>
+				<view class="text-xl text-bold text-black">{{ salary.month }}</view>
+				<view class="margin-top-sm">本月工资</view>
 			</view>
 		</view>
 		<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
@@ -54,7 +62,12 @@
 export default {
 	data() {
 		return {
-			info: {}
+			info: {},
+			salary: {
+				week: 0,
+				month: 0,
+				lastWeek: 0
+			},
 		};
 	},
 	methods: {
@@ -62,6 +75,18 @@ export default {
 			this.$func.usemall.call('engineers/getInfo').then(res => {
 				console.log(res);
 				this.info = res.datas.data;
+			});
+			this.$func.usemall.call('engineers/getWeekSalary').then(res => {
+				console.log(res);
+				this.salary.week = res.datas.data.salary;
+			});
+			this.$func.usemall.call('engineers/getMonthSalary').then(res => {
+				console.log(res);
+				this.salary.month = res.datas.data.salary;
+			});
+			this.$func.usemall.call('engineers/getLastWeekSalary').then(res => {
+				console.log(res);
+				this.salary.lastWeek = res.datas.data.salary;
 			});
 		},
 		checkInfo() {

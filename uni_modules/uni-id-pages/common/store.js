@@ -104,18 +104,21 @@ export const mutations = {
 	}) {
 		let _this = this;
 		if (data) {
-			if (uni.getSystemInfoSync().platform === 'ios' || uni.getSystemInfoSync().platform === 'android') {
-				$func.usemall.call('member/oneClick', {
-					res: data
-				}).then(() => {
-					_this.addCoupon();
-				})
-			} else {
-				console.log('sadgsddadff')
-				$func.usemall.call('member/loginByWeixin', {
-					res: data
-				})
-			}
+			// #ifdef APP
+			$func.usemall.call('member/oneClick', {
+				res: data
+			}).then(() => {
+				_this.addCoupon();
+			})
+			// #endif
+			// #ifndef APP
+			console.log('sadgsddadff')
+			$func.usemall.call('member/loginByWeixin', {
+				res: data
+			}).then(() => {
+				_this.addCoupon();
+			})
+			// #endif
 		}
 
 		console.log('set-userInfo.....', data);

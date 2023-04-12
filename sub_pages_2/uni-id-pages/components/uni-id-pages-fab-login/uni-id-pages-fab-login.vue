@@ -454,12 +454,12 @@
 					// #ifdef MP-WEIXIN
 					//如果是微信小程序端的微信登录，且为首次登录，就弹出获取微信昵称+头像用于绑定资料
 					if (['weixin', 'weixinMobile'].includes(type) && result.type == "register") {
-            mutations.loginSuccess({
+						mutations.loginSuccess({
 							...result,
-							showToast: false,
-							autoBack: false
-						})
-						return this.$refs.userProfile.open(result.uid)
+							showToast: true,
+							autoBack: true
+						})	
+						return;
 					}
 					// #endif
 					// #ifdef H5
