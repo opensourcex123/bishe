@@ -482,7 +482,7 @@
 					url: '/sub_pages_1/enginner/home/item-details/follow/follow'
 				});
 			},
-			getDetails(id) {
+			async getDetails(id) {
 				const p1 = this.$func.usemall.call('order/getDetails', {
 					order_id: id
 				});
@@ -499,8 +499,9 @@
 					this.tmpPrice = parseFloat(this.data.order_actural_paid / 100);
 					this.is_main_engineer = this.data.engineer_id === user._id;
 					const addrRes = await this.$db['usemall-member-address'].tofirst(this.data.addr_id);
+					console.log('地址信息', this.data);
 					this.data.address_data = addrRes.datas;
-					this.loadEngineer();
+					await this.loadEngineer();
 				});
 			},
 			copy(data) {
@@ -726,10 +727,13 @@
 					})
 					.tofulllist()
 					.then(res => {
+						// console.log('收费标准', res.datas);
 						this.serviceCheckedOrderList = res.datas.map(v => {
-							return v.charge_standard.map(item => {
-								return `${item.name}&${item.price}`;
-							});
+							if (v.charge_standard) {
+								return v.charge_standard.map(item => {
+									return `${item.name}&${item.price}`;
+								});
+							}
 						});
 						this.serviceCheckedOrderList = this.serviceCheckedOrderList.flat();
 					});
@@ -1386,14 +1390,14 @@
 					});
 			}
 		},
-		onLoad(e) {
+		async onLoad(e) {
 			const user = uni.getStorageSync('uni-id-pages-userInfo');
 			this.orderData = JSON.stringify({
 				engineer_id: user._id,
 				order_id: e.id
 			});
 			console.log('************', e.id);
-			this.getDetails(e.id);
+			await this.getDetails(e.id);
 			this.checkPriceList(e.id);
 			this.initTime();
 			this.getOrderCardList();
@@ -1424,6 +1428,8 @@
 			uni.$on('earnest_success', () => {
 				this.$api.msg('用户已支付定金');
 			});
+			
+			this.getDetails(this.orderData.order_id);
 		}
 	};
 </script>

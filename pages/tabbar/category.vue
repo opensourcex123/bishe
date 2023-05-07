@@ -16,62 +16,23 @@
 			<!-- 右侧 1二级分类 2商品列表 -->
 			<scroll-view class="h-full right bg-main" scroll-with-animation scroll-y :scroll-top="top"
 				:style="{ height: scrollHeight }">
-				<!-- 右侧二级分类 -->
-				<!-- <view class="dflex-s dflex-wrap-w" v-if="mode == 1">
-					<view class="item padding-bottom-sm dflex dflex-flow-c" v-if="item.pid == cid"
-						v-for="item in sdatas" :key="item._id" @click="togoodslist(item)">
-						<image :lazy-load="true" :src="item.img"></image>
-						<text class="tac clamp margin-top-sm">{{ item.name }}</text>
-					</view>
-				</view> -->
 				<view v-if="item.pid == cid" v-for="item in sdatas" :key="item._id">
-					<!-- <use-empty v-if="empty" e-style="round" tip="无商品数据"></use-empty> -->
 					<view>
-						<text class="margin-left" style="font-size: larger; font-weight: bolder;">{{item.name}}</text>
+						<text class="margin-left" style="font-size: larger; font-weight: bolder;">
+							{{item.name}}
+						</text>
 						<view class="dflex-s" style="flex-wrap: wrap;">
-							<view v-if="data.cid === item._id" v-for="data in goodsDatas" :key="data._id" class="item padding-bottom-sm dflex dflex-flow-c" @click="togoods(data)">
+							<view v-if="data.cid === item._id" v-for="data in goodsDatas" 
+							:key="data._id" class="item padding-bottom-sm dflex dflex-flow-c" 
+							@click="togoods(data)">
 								<image :lazy-load="true" :src="data.img"></image>
 								<text class="tac clamp margin-top-sm">{{ data.abbr }}</text>
 							</view>
 						</view>
 					</view>
 				</view>
-
-				<!-- 右侧分类对应商品列表 -->
-				<!-- <view v-if="mode == 2"> -->
-					<!-- 空白页 -->
-					<!-- <use-empty v-if="empty" e-style="round" tip="无商品数据"></use-empty> -->
-
-					<!-- <view v-else class="padding-lr" v-for="(item, index) in goodsDatas" :key="index"
-						@click="togoods(item)">
-						<view class="goods border-radius-sm padding margin-bottom-sm bg-main"
-							style="padding-bottom: 15rpx;">
-							<view class="goods-left">
-								<image mode="aspectFill" :lazy-load="true" :src="item.img"></image>
-							</view>
-							<view class="margin-left-sm pos-r">
-								<text class="clamp-2">{{ item.name }} {{ item.name_pw }}</text>
-								<view class="pos-a price-box w-full">
-									<text class="price">{{ item.price / 100 }}</text>
-									<text class="m-price">{{ item.market_price / 100 }}</text>
-								</view>
-							</view>
-						</view>
-					</view> -->
-
-					<!-- 上拉加载更多 -->
-					<!-- <use-loadmore v-if="!empty && hasmore" :type="loadmoreType"></use-loadmore> -->
-					<!-- 置顶 -->
-					<!-- <use-totop ref="usetop" bottom="150" :style="{ marginBottom: navHeight + 'px' }" @to="totop"></use-totop> -->
-				<!-- </view> -->
 			</scroll-view>
 		</view>
-
-		<!-- 切换模式 1二级分类 2商品列表 -->
-		<!-- <view class="fixed-top" :style="{ marginBottom: navHeight + 'px' }" @click="changeMode">
-			<text class="iconfont iconpailie" v-if="mode == 1"></text>
-			<text class="iconfont iconpailie02" v-if="mode == 2"></text>
-		</view> -->
 	</view>
 </template>
 
@@ -193,9 +154,6 @@
 			},
 			// 加载商品数据
 			loadGoodsDatas() {
-				// if (this.mode != 2) {
-				// 	return;
-				// }
 				// 根据当前 cid 加载商品数据列表
 				this.reqdata.cid = this.cid;
 				this.$db[_goods].where(`'${this.reqdata.cid}' in cids`).tolist(this.reqdata).then(res => {

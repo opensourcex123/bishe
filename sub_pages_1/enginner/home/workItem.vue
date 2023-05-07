@@ -3,8 +3,10 @@
 		<u-tabs :list="list1" @click="click"></u-tabs>
 		<view class="bg-page" style="width: 100%;padding-bottom: 150upx;">
 			<z-paging ref="paging" v-model="list" @query="getOrders" :use-page-scroll="true">
-				<view class="flex items-center justify-center" @tap="checkDetails(item.order_id)" v-for="(item, index) in list" :key="index">
-					<order-item class="margin-tb" :status="item.state" :end="item.end_time" :title="item.order_info" :address="item.order_consignee_addr"></order-item>
+				<view class="flex items-center justify-center" @tap="checkDetails(item.order_id)" 
+				v-for="(item, index) in list" :key="index">
+					<order-item class="margin-tb" :status="item.state" :end="item.end_time" 
+					:title="item.order_info" :address="item.order_consignee_addr"></order-item>
 				</view>
 			</z-paging>
 		</view>

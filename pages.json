@@ -144,7 +144,7 @@
 			}, {
 				"path": "user/address/address-edit",
 				"style": {
-					"navigationBarTitleText": "添加收货人"
+					"navigationBarTitleText": "添加地址"
 				}
 			}, {
 				"path": "user/address/address",

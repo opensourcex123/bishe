@@ -26,8 +26,9 @@
         <view class="flex justify-center align-center" style="width: 100%;background-color: white;"
             v-if="skuDatas.length !== 0">
             <scroll-view class="scroll-view_H" scroll-x="true">
-                <view @click="selectSKU(item, index)" v-for="(item, index) in skuDatas" :key="index" class="category"
-                    :style="choiceIndex === index ? 'border: 5rpx solid #F76560;': ''">
+                <view @click="selectSKU(item, index)" v-for="(item, index) in skuDatas" :key="index" 
+				class="category"
+                :style="choiceIndex === index ? 'border: 5rpx solid #F76560;': ''">
                     <text class="category-name">
                         {{item.name}}
                     </text>

@@ -163,6 +163,7 @@ export default {
 		// 确认支付前弹窗是否有优惠券
 		async isHaveCoupon() {
 			let _this = this;
+			this.coupons = [];
 			const createUIDRes = await this.$db['usemall-order'].where({ order_id: this.order_id }).tofirst();
 
 			this.$db['coupons']

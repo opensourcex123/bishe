@@ -14,11 +14,6 @@
 			<text class="tit">具体地址</text>
 			<view class="dflex-b flex1">
 				<view class="flex1 input_t" @click="choiceMapAddr">{{ addressName }}</view>
-				<!-- <use-address ref="useAddress" @onConfirm="changeAddr" cancelColor="#bbb" themeColor="#FF6A6C">
-				</use-address> -->
-				<!-- <use-pickeraddr class="flex1" @change="changeAddr">
-					<view class="input_t">{{ addressName }}</view>
-				</use-pickeraddr> -->
 				<!-- #ifdef MP-WEIXIN || MP-BAIDU -->
 				<view class="iconfont icondizhi- input_t padding-lr-sm padding-tb-16" @click="choiceMapAddr">定位</view>
 				<!-- #endif -->
@@ -70,9 +65,9 @@ export default {
 		};
 	},
 	onLoad(options) {
-		let title = '新增收货人';
+		let title = '新增地址';
 		if (options.type === 'edit') {
-			title = '编辑收货人';
+			title = '编辑地址';
 			this.id = options.id;
 
 			this.$db[__name].tofirst(this.id).then(res => {
@@ -123,10 +118,6 @@ export default {
 					uni.chooseLocation({
 						success: res => {
 							console.log('位置', res);
-							// console.log('位置名称：' + res.name);
-							// console.log('详细地址：' + res.address);
-							// console.log('纬度：' + res.latitude);
-							// console.log('经度：' + res.longitude);
 
 							if (res && res.name) {
 								let __addr = _this.resolveAddr(res);
@@ -166,10 +157,6 @@ export default {
 			uni.chooseLocation({
 				success: res => {
 					console.log('位置', res);
-					// console.log('位置名称：' + res.name);
-					// console.log('详细地址：' + res.address);
-					// console.log('纬度：' + res.latitude);
-					// console.log('经度：' + res.longitude);
 			
 					if (res && res.name) {
 						let __addr = _this.resolveAddr(res);

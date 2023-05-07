@@ -158,10 +158,10 @@ export default {
 	},
 	mounted() {
 		this.start_time = this.$dayjs()
-			.startOf('month')
+			.startOf('year')
 			.valueOf();
 		this.end_time = this.$dayjs()
-			.endOf('month')
+			.endOf('year')
 			.valueOf();
 		this.minDate = this.$dayjs('2022-01-01 00:00:00').valueOf();
 		this.maxDate = this.$dayjs().valueOf();
