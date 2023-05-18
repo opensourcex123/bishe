@@ -401,8 +401,16 @@ export default {
 				return;
 			}
 			this.$func.usemall.call('engineers/checkAuth', {}).then(res => {
-				console.log(res);
-				if (res.datas.rows === 0) {
+				console.log('工程师',res);
+				if (res.datas.data.length !== 0 && res.datas.data[0].audit_status === 0) {
+					this.$api.msg('您已申请，请等待申请结果');
+					return;
+				}
+				if (res.datas.data.length !== 0 && res.datas.data[0].audit_status === -1) {
+					this.$api.msg('您的申请未通过');
+					return;
+				}
+				if (res.datas.row === 0) {
 					// uni.showToast({
 					// 	title: "您还不是工程师"
 					// })

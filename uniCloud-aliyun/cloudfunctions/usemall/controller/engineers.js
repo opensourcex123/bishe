@@ -65,12 +65,12 @@ module.exports = class EngineersController extends Controller {
 
 		let res = await this.db.collection("engineers").where({
 			user_id: uid,
-			audit_status: 1
 		}).get()
 
 		return {
 			code: 200,
-			rows: res.affectedDocs
+			data: res.data,
+			row: res.affectedDocs,
 		};
 	}
 

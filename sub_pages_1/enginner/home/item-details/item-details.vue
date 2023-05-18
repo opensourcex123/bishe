@@ -365,13 +365,9 @@
 </template>
 
 <script>
-	import tkiQrcode from '@/sub_pages_1/components/tki-qrcode/tki-qrcode.vue';
 	const _address = 'usemall-member-address';
 	const db = uniCloud.database();
 	export default {
-		components: {
-			tkiQrcode
-		},
 		data() {
 			return {
 				showFunc: false,
