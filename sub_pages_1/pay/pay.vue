@@ -109,7 +109,7 @@ export default {
 			this.$db['coupons'].remove(item._id);
 			// 把order表的实际付款金额更新
 			this.$db['usemall-order'].where({ order_id: this.order_id }).update({ order_actural_paid: this.money * 100 });
-			this.confirm();
+			this.fakeConfirm(this.order_id);
 		},
 		close() {
 			this.showCoupon = false;
@@ -507,7 +507,7 @@ export default {
 			
 			// 如果支付成功，修改一下状态
 			await _this.$db['usemall-order'].where({order_id: order_id}).update({
-				state: '待评价',
+				state: '已完成',
 				order_pay_state: '已付款'
 			});
 			let order_log = {
